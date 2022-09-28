@@ -1,5 +1,3 @@
-import datadome from "./lib/datadome";
-
 export const config = {
   // It's possible to run Datadome for all paths, but it's better to take
   // advantage of pattern matching and only protect from bots where required.
@@ -7,7 +5,7 @@ export const config = {
 };
 
 export default async function middleware(req) {
-  const { pathname } = req.nextUrl;
+  console.log("here");
 
   // `datadome(req)` returns a promise that resolves to
   // a respones (NextResponse) or undefined
@@ -20,5 +18,4 @@ export default async function middleware(req) {
   //
   // If there's no rewrite, you're not a bot and we
   // send the response that includes Datadome's headers.
-  return datadome(req);
 }
